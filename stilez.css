@@ -1,0 +1,230 @@
+body{
+    font-family: 'Neuton', serif; /* Font di base */
+    background-color: #FFFAED ; /* Colore di sfondo */
+    color: rgb(54 31 15);
+}
+
+
+header{
+
+    position: fixed; /* Rende l'header fisso */
+    top: 0; /* Posiziona l'header in alto */
+    left: 0;
+    width: 100%; /* L'header occupa tutta la larghezza */
+    z-index: 1000; /* Assicura che l'header sia sopra gli altri elementi */
+    background-color: #FFFAED; /* Sfondo dell'header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra */
+}
+
+
+.flex-container {
+    display: flex; /* Abilita il layout flessibile */
+    justify-content: space-between; /* Centra gli elementi orizzontalmente */
+    align-items: center;
+}
+
+#menu {
+    display: flex; /* Abilita il layout flessibile */
+    justify-content: space-between; /* Centra gli elementi orizzontalmente */
+    align-items: center; /* Centra gli elementi verticalmente */
+    padding: 10px 20px; /* Spaziatura interna */
+    background-color: #FFFAED ; /* Colore di sfondo */
+}
+#menu button{
+    font-family: 'Neuton', serif; /* Font Neuton */
+    font-size: 16px; /* Dimensione del testo */
+    color: rgb(54, 31, 15); /* Colore del testo */
+    background-color: transparent; /* Sfondo trasparente */
+    border: none;
+    padding: 10px 20px; /* Spaziatura interna */
+    
+}
+
+#logo button{
+
+    font-family: 'Neuton', serif; /* Font di base */
+    font-size: 16px; /* Dimensione del testo */
+    color: rgb(54, 31, 15); /* Colore del testo */
+    background-color: transparent; /* Sfondo trasparente */
+    border: none;
+    
+}
+
+#cart button{
+    font-family: 'Neuton', serif; /* Font di base */
+    font-size: 16px; /* Dimensione del testo */
+    color: rgb(54, 31, 15); /* Colore del testo */
+    background-color: transparent; /* Sfondo trasparente */
+    border: none;
+    padding: 10px 20px; /* Spaziatura interna */
+} 
+
+
+/* Immagine di default (desktop) */
+.desktop-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+/* Immagine mobile di default è nascosta */
+.mobile-image {
+    display: none;
+    margin : 0;
+}
+
+/* Media query per dispositivi mobili (max-width 768px) */
+@media (max-width: 768px) {
+    .desktop-image {
+        display: none;  /* Nasconde l'immagine desktop */
+    }
+
+    .mobile-image {
+        display: block;  /* Mostra l'immagine mobile */
+        width: 100%;  /* Adatta l'immagine alla larghezza del dispositivo mobile */
+        height: auto;
+    }
+}
+
+/* Contenitore generale */
+.image-overlay-container {
+    width: 100%;
+    position: relative;
+    width: 100%;
+}
+
+/* Contenitori per le immagini */
+.desktop-container,
+.mobile-container {
+    position: relative;
+    display: none; /* Nascondi entrambe le immagini di default */
+}
+
+.desktop-container img,
+.mobile-container img {
+    width: 100%;
+    height: auto;
+}
+
+/* Mostra l'immagine desktop di default */
+.desktop-container {
+    display: block;
+}
+
+/* Mostra l'immagine mobile su schermi piccoli */
+@media (max-width: 768px) {
+    .desktop-container {
+        display: none;
+    }
+    .mobile-container {
+        display: block;
+    }
+}
+
+/* Contenitore per gli overlay di testo */
+.overlay-text-container {
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column; /* Dispone i link in colonna */
+    gap: 10px; /* Spazio tra i link */
+    text-align: center;
+}
+
+/* Stile per i singoli overlay */
+.overlay-text {
+    display: inline-block; /* Adatta il bordo alla lunghezza del testo */
+    background-color: rgb(150 218 234); /* Colore di sfondo */
+    border-color: rgb(150 218 234); /* Colore del bordo */
+    border-radius: 5.625rem; /* Bordo arrotondato */
+    border-width: 0.0625rem; /* Spessore del bordo */
+    border-style: solid; /* Stile del bordo */
+    color: rgb(54 31 15); /* Colore del testo */
+    padding: 0.375rem 1rem; /* Spaziatura interna */
+    text-align: center; /* Centra il testo */
+    font-size: 0.75rem; /* Dimensione del testo */
+    font-weight: 300; /* Peso del testo */
+    text-transform: uppercase; /* Testo in maiuscolo */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+    width: auto; /* Assicura che la larghezza si adatti al contenuto */
+    max-width: none; /* Rimuove eventuali limiti di larghezza */
+    box-sizing: border-box;
+    
+}
+
+.overlay-text a {
+    display: inline; /* Mantieni il link in linea con il testo */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: inherit; /* Usa il colore del genitore */
+    padding: 0; /* Rimuove eventuali padding */
+    margin: 0; /* Rimuove eventuali margini */
+    width: auto;
+}
+
+/* Stile per il bordo e lo sfondo al passaggio del mouse */
+.overlay-text:hover {
+    background-color: rgb(150 218 234); /* Mantieni lo sfondo visibile */
+    border-color: rgb(150 218 234); /* Mantieni il bordo visibile */
+    color: rgb(54 31 15); /* Colore del testo */
+    transition: all 0.3s ease; /* Aggiungi una transizione per un effetto fluido */
+}
+
+.overlay-text a:hover {
+    text-decoration: none; /* Mantieni il testo senza sottolineatura */
+    color: inherit; 
+}
+
+
+/* Nascondi il menu e il carrello nell'header su dispositivi mobili */
+@media (max-width: 768px) {
+    header #menu,
+    header #cart {
+        display: none; /* Nasconde il menu e il carrello nell'header */
+    }
+
+    footer #menu,
+    footer #cart {
+        display: block; /* Mostra il menu e il carrello nel footer */
+    }
+}
+
+/* Mostra il menu e il carrello nell'header su dispositivi più grandi */
+@media (min-width: 769px) {
+    footer #menu,
+    footer #cart {
+        display: none; /* Nasconde il menu e il carrello nel footer */
+    }
+
+    header #menu,
+    header #cart {
+        display: block; /* Mostra il menu e il carrello nell'header */
+    }
+}
+
+footer {
+    position: fixed; /* Rende il footer fisso */
+    bottom: 0; /* Posiziona il footer in basso */
+    left: 0; /* Allinea il footer al bordo sinistro */
+    width: 100%; /* Il footer occupa tutta la larghezza dello schermo */
+    background-color: #FFFAED; /* Colore di sfondo del footer */
+    z-index: 1000; /* Assicura che il footer sia sopra gli altri elementi */
+    padding: 5px 10px; /* Spaziatura interna */
+    text-align: center; /* Centra il contenuto */
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+footer #logo2 {
+    display: flex; /* Abilita Flexbox per il logo */
+    justify-content: center; /* Centra il logo orizzontalmente */
+    align-items: center; /* Centra il logo verticalmente */
+}
+
+footer #logo2 img {
+    max-width: 40px; /* Imposta una larghezza massima per l'immagine */
+    height: auto; /* Mantiene le proporzioni dell'immagine */
+}
